@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>XML based messages from HTTP requests</title>
+</head>
+<body>
+<div class="container">
+
+    <div class="jumbotron">
+        <h3>Applications</h3>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Posted</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="responses : ${response}">
+                <td th:text="${responses.id}">ID</td>
+                <td th:text="${responses.title}">Title</td>
+                <td th:text="${responses.description}">Description</td>
+                <td th:text="${responses.is_posted}">Posted</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
